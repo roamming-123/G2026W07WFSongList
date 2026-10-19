@@ -61,9 +61,11 @@ namespace G2026W07WFSongList
         private void LoadSongs()
         {
             listSong.Items.Clear();
-
+            string keyword = txtFilter.Text.Trim();
             var songs = _db.Songs
-                //.Where(s => s.Rating >= 4)
+                 .Where(s => s.Title.ToLower().Contains(keyword) ||
+                    s.Artist.ToLower().Contains(keyword))
+
                 .OrderByDescending(s => s.Rating)
                 .ToList();
 
@@ -152,6 +154,11 @@ namespace G2026W07WFSongList
             {
                 UseShellExecute = true
             });
+        }
+
+        private void OnFilterChanged(object sender, EventArgs e)
+        {
+            LoadSongs();
         }
     }
     public record Song(string Title, string Artist, int Rating)

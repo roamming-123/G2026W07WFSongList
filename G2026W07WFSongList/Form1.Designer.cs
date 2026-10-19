@@ -38,12 +38,13 @@ namespace G2026W07WFSongList
             txtRating = new TextBox();
             txtSelected = new TextBox();
             btnDelete = new Button();
+            txtFilter = new TextBox();
             SuspendLayout();
             // 
             // listSong
             // 
             listSong.FormattingEnabled = true;
-            listSong.Location = new Point(218, 30);
+            listSong.Location = new Point(218, 39);
             listSong.Name = "listSong";
             listSong.Size = new Size(439, 264);
             listSong.TabIndex = 0;
@@ -52,7 +53,7 @@ namespace G2026W07WFSongList
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(538, 251);
+            btnAdd.Location = new Point(538, 260);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(75, 23);
             btnAdd.TabIndex = 1;
@@ -62,7 +63,7 @@ namespace G2026W07WFSongList
             // 
             // txtTitle
             // 
-            txtTitle.Location = new Point(218, 211);
+            txtTitle.Location = new Point(218, 220);
             txtTitle.Name = "txtTitle";
             txtTitle.PlaceholderText = "제목";
             txtTitle.Size = new Size(100, 27);
@@ -70,7 +71,7 @@ namespace G2026W07WFSongList
             // 
             // txtArtist
             // 
-            txtArtist.Location = new Point(324, 214);
+            txtArtist.Location = new Point(324, 223);
             txtArtist.Name = "txtArtist";
             txtArtist.PlaceholderText = "가수";
             txtArtist.Size = new Size(100, 27);
@@ -78,7 +79,7 @@ namespace G2026W07WFSongList
             // 
             // txtRating
             // 
-            txtRating.Location = new Point(430, 214);
+            txtRating.Location = new Point(430, 223);
             txtRating.Name = "txtRating";
             txtRating.PlaceholderText = "평점";
             txtRating.Size = new Size(100, 27);
@@ -86,7 +87,7 @@ namespace G2026W07WFSongList
             // 
             // txtSelected
             // 
-            txtSelected.Location = new Point(238, 247);
+            txtSelected.Location = new Point(238, 256);
             txtSelected.Name = "txtSelected";
             txtSelected.PlaceholderText = "삭제를 위한 선택한 노래";
             txtSelected.ReadOnly = true;
@@ -96,7 +97,7 @@ namespace G2026W07WFSongList
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(536, 222);
+            btnDelete.Location = new Point(536, 231);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(75, 23);
             btnDelete.TabIndex = 6;
@@ -104,11 +105,21 @@ namespace G2026W07WFSongList
             btnDelete.UseVisualStyleBackColor = true;
             btnDelete.Click += onDelete;
             // 
+            // txtFilter
+            // 
+            txtFilter.Location = new Point(218, 7);
+            txtFilter.Name = "txtFilter";
+            txtFilter.PlaceholderText = "제목 또는 가수 검색";
+            txtFilter.Size = new Size(439, 27);
+            txtFilter.TabIndex = 7;
+            txtFilter.TextChanged += OnFilterChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtFilter);
             Controls.Add(btnDelete);
             Controls.Add(txtSelected);
             Controls.Add(txtRating);
@@ -131,5 +142,6 @@ namespace G2026W07WFSongList
         private TextBox txtRating;
         private TextBox txtSelected;
         private Button btnDelete;
+        private TextBox txtFilter;
     }
 }
